@@ -1,0 +1,136 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#footer-form-newsletter > div{
+  align-items: center;
+}
+
+nav input, button, .btn {
+  border-radius: 2em !important;
+}
+
+nav .fas {
+  font-size: 2em;
+}
+
+nav .fas:hover {
+  color: #282c34;
+}
+
+.soustitre {
+  font-size: .8em;
+}
+
+.carousel-inner img {
+  margin: auto;
+}
+
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+}
+
+.carousel-inner {
+  height: 20em;
+}
+
+.card-product {
+  width: 25em;
+  height: 25em;
+  margin: 1em;
+}
+
+.description {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-img-container{
+  display: flex;
+  align-self: center;
+  height: 10em;
+  width: 10em;
+}
+
+.card-img-container > img{
+  height: 100%;
+  width: 100%;
+}
+
+.section-marg {
+  margin: 2em;
+}
+
+.marg-hauteur {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+#about .flex {
+  display: flex;
+}
+
+#about .flex img {
+  height: 100%;
+  width: 20em;
+  margin-right: 2em;
+}
+
+.flexouille {
+  display: flex;
+}
+
+.flexouille .form-group:first-child {
+  margin-right: 2em;
+}
+
+.flexouille * {
+  width: 100%;
+}
+
+#btn-recherche {
+  padding-right: 2em;
+}

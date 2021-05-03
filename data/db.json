@@ -1,0 +1,213 @@
+{
+  "utilisateurs": [
+    {
+      "id": 1,
+      "nom": "Quiroule",
+      "prenom": "Pierre",
+      "email": "Pierre@gmail.com",
+      "civilite": "M",
+      "adresse": {
+        "voie": "25 Rue de Figueras",
+        "ville": "Marignane",
+        "CP": "13700"
+      },
+      "tel": "0608162245",
+      "mdp": "test"
+    },
+    {
+      "id": 2,
+      "nom": "Flavius",
+      "prenom": "Aetus",
+      "email": "A.Flavius@gmail.com",
+      "civilite": "M",
+      "adresse": {
+        "voie": "20 Rue des champs Catalauniques",
+        "ville": "Châlons-en-Champagne",
+        "CP": "51000"
+      },
+      "tel": "0608166578",
+      "mdp": "test"
+    },
+    {
+      "nom": "Waskar",
+      "prenom": "Said",
+      "email": "S.Waskar@gmail.ei",
+      "civilite": "M",
+      "adresse": {
+        "voie": "20 Rue du tapis vert",
+        "ville": "Noailles, ouais ouais ouais",
+        "CP": "2"
+      },
+      "tel": "0102030405",
+      "mdp": "azerty1999",
+      "id": 3
+    },
+    {
+      "nom": "azd",
+      "prenom": "azd",
+      "email": "toto@tata.com",
+      "civilite": "M",
+      "adresse": {
+        "voie": "azd",
+        "ville": "azd",
+        "CP": "azd"
+      },
+      "tel": "azd",
+      "mdp": "azd",
+      "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "libelle": "Homme"
+    },
+    {
+      "id": 1,
+      "libelle": "Femme"
+    }
+  ],
+  "produits": [
+    {
+      "id": 1,
+      "libelle": "Produit1",
+      "description": "Description du produit numéro un",
+      "taille": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "couleur": [
+        "Rouge",
+        "Vert",
+        "Bleue"
+      ],
+      "prix": 12.99,
+      "categorieId": 1,
+      "image": "./img/tshirt1.jpg"
+    },
+    {
+      "id": 2,
+      "libelle": "T-Shirt bleu",
+      "description": "T-shirt avec deux manches, et de couleur bleu uniquement",
+      "taille": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "couleur": [
+        "Bleue"
+      ],
+      "prix": 9.99,
+      "categorieId": 1,
+      "image": "./img/tshirt2.png"
+    },
+    {
+      "id": 3,
+      "libelle": "Sweat à capuche",
+      "description": "Un sweat avec une petite capuche",
+      "taille": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "couleur": [
+        "Bleue"
+      ],
+      "prix": 9.99,
+      "categorieId": 1,
+      "image": "./img/sweet1.jpg"
+    },
+    {
+      "id": 4,
+      "libelle": "Nike T-Shirt",
+      "description": "un T-Shirt de la marque Nike. Oui.",
+      "taille": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "couleur": [
+        "Noir"
+      ],
+      "prix": 9.99,
+      "categorieId": 1,
+      "image": "./img/tshirt3.jpg"
+    }
+  ],
+  "commandes": [
+    {
+      "id": 1,
+      "userId": 1,
+      "date": "28/04/2021",
+      "produits": [
+        {
+          "produitId": 1,
+          "quantite": 2,
+          "taille": "XL",
+          "couleur": "Rouge"
+        },
+        {
+          "produitId": 1,
+          "quantite": 1,
+          "taille": "L",
+          "couleur": "Rouge"
+        },
+        {
+          "produitId": 1,
+          "quantite": 1,
+          "taille": "L",
+          "couleur": "Vert"
+        }
+      ]
+    }
+  ],
+  "newsletters": [
+    {
+      "id": 1,
+      "email": "Pierre@gmail.com"
+    },
+    {
+      "email": "toto@tata.com",
+      "id": 2
+    },
+    {
+      "email": "toto@tata.com",
+      "id": 3
+    },
+    {
+      "email": "test@gmail.com",
+      "id": 4
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "nom": "Quiroule",
+      "prenom": "Pierre",
+      "email": "Pierre@gmail.com",
+      "tel": "0616560613",
+      "message": "J'ai un problème par rapport à ma commande"
+    },
+    {
+      "email": "G.Boz@gmail.com",
+      "nom": "Bozetti",
+      "prenom": "Gérard",
+      "tel": "0102030405",
+      "message": "Salut à tous,\nhop j'ai sauter une ligne\nla aussi\net la aussi.\nRespect à tous !",
+      "id": 2
+    },
+    {
+      "email": "zf@zef",
+      "nom": "azd",
+      "prenom": "zfe",
+      "tel": "zef",
+      "message": "zfezefzef",
+      "id": 3
+    }
+  ]
+}
