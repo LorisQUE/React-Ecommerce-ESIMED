@@ -109,11 +109,11 @@ nav .fas:hover {
   margin-bottom: 3em;
 }
 
-#about .flex {
+.flex {
   display: flex;
 }
 
-#about .flex img {
+.flex img {
   height: 100%;
   width: 20em;
   margin-right: 2em;
@@ -133,4 +133,32 @@ nav .fas:hover {
 
 #btn-recherche {
   padding-right: 2em;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail  label {
+  font-weight: bold;
+}
+
+.container > .flex {
+  margin: 2em;
+}
+
+.card-link:hover {
+  text-decoration: none;
+  transform: scale(1.01);
+  border-color: black;
+  transition: 0.3s;
+}
+.card-link:hover > .card {
+  border-color: slategrey;
+  transition: 0.3s;
+}
+
+.card-link {
+  margin-left: 1.25rem;
 }

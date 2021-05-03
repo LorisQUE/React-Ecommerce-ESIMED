@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useState } from 'react'
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../App';
 import InputLabel from '../components/form/inputLabel';
 import { BASE_URL } from '../services/data';
@@ -33,7 +34,6 @@ export default function Login(props) {
             } else {
                 setError(false);
                 localStorage.setItem("utilisateur", JSON.stringify(res.data));
-                console.log("props", props);
                 context.setConnected(true);
                 props.history.push("/");
             }
@@ -53,6 +53,7 @@ export default function Login(props) {
                     <InputLabel required="required" value={connexions.pwd} change={handleChange} name="pwd" label="Mot de Passe" type="password" placeholder="Saisir votre mot de passe"/>
                 </div>
                 <button type="submit" className="btn btn-primary">Se Connecter</button>
+                <Link to="/register" className="btn btn-secondary">S'inscrire</Link>
             </form>
         </main>
     )

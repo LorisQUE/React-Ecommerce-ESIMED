@@ -24,9 +24,8 @@ export default function Header() {
     useEffect(() => {
         axios.get(BASE_URL + "categories")
         .then(res => {
-            console.log(res);
             const newMenu = [];
-            res.data.map( x => newMenu.push({nom: x.libelle, lien: "/" + x.libelle}));
+            res.data.map( x => newMenu.push({nom: x.libelle, lien: "/products/categorie/" + x.id}));
             setMenu([...menu, ...newMenu]);
         })
         .catch(console.log)
@@ -35,17 +34,7 @@ export default function Header() {
     const [recherche, setRecherche] = useState("");
     const handleSubmit = (e) => {
         e.preventDefault();
-        const url = BASE_URL + "produits";
-        const result = axios.get(url, { params: 
-            {
-                libelle_like: recherche,
-            }
-        });
-
-        result.then(res => { 
-            console.log(res);
-            history.push("/products");
-        })
+        history.push("/products/recherche/" + recherche);
     }
     const handleChange = (e) => {
         setRecherche(e.currentTarget.value)
@@ -63,15 +52,15 @@ export default function Header() {
                     {menu.map((x,y) => <MenuLi key={y} lien={x.lien} nom={x.nom} />)}
                 </ul>
                 <div>
-                    <a className="btn">
+                    <div className="btn">
                         <Link to="/profil" className="fas fa-user" ></Link>
-                    </a>
-                    <a className="btn">
+                    </div>
+                    <div className="btn">
                         <Link to="/" className="fas fa-shopping-basket"></Link>
-                    </a>
+                    </div>
                 </div>
                 <form onSubmit={handleSubmit} className="form-inline my-2 my-lg-0">
-                    <InputLabel required="required" value={recherche} change={handleChange} name="recherche" type="text"/>
+                    <InputLabel value={recherche} change={handleChange} name="recherche" type="text"/>
                     <button id="btn-recherche" className="btn btn-secondary my-2 my-sm-0" type="submit">Recherche</button>
                 </form>
             </div>

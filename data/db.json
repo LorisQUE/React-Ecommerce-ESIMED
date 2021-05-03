@@ -63,8 +63,12 @@
       "libelle": "Homme"
     },
     {
-      "id": 1,
+      "id": 2,
       "libelle": "Femme"
+    },
+    {
+      "id": 3,
+      "libelle": "Enfant"
     }
   ],
   "produits": [
@@ -81,11 +85,11 @@
       "couleur": [
         "Rouge",
         "Vert",
-        "Bleue"
+        "Bleu"
       ],
       "prix": 12.99,
       "categorieId": 1,
-      "image": "./img/tshirt1.jpg"
+      "image": "/img/tshirt1.jpg"
     },
     {
       "id": 2,
@@ -98,11 +102,11 @@
         "XL"
       ],
       "couleur": [
-        "Bleue"
+        "Bleu"
       ],
       "prix": 9.99,
       "categorieId": 1,
-      "image": "./img/tshirt2.png"
+      "image": "/img/tshirt2.png"
     },
     {
       "id": 3,
@@ -115,11 +119,11 @@
         "XL"
       ],
       "couleur": [
-        "Bleue"
+        "Bleu"
       ],
       "prix": 9.99,
       "categorieId": 1,
-      "image": "./img/sweet1.jpg"
+      "image": "/img/sweet1.jpg"
     },
     {
       "id": 4,
@@ -136,7 +140,96 @@
       ],
       "prix": 9.99,
       "categorieId": 1,
-      "image": "./img/tshirt3.jpg"
+      "image": "/img/tshirt3.jpg"
+    },
+    {
+      "id": 5,
+      "libelle": "Pull Nike de très bonne facture (non)",
+      "description": "Un pull Nike réalisé a partir de vibre complétement végétale et écologique. (Assemblé par des enfants esclaves au Cambodge)",
+      "taille": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "couleur": [
+        "Noir",
+        "Gris",
+        "Marron"
+      ],
+      "prix": 35.00,
+      "categorieId": 1,
+      "image": "/img/pull2.jpg"
+    },
+    {
+      "id": 6,
+      "libelle": "Pull",
+      "description": "c 1 pull ac dla laine ^^",
+      "taille": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "couleur": [
+        "Noir",
+        "Gris",
+        "Blanc",
+        "Plaqué or"
+      ],
+      "prix": 14.99,
+      "categorieId": 1,
+      "image": "/img/pull1.jpg"
+    },
+    {
+      "id": 7,
+      "libelle": "Débardeur sport",
+      "description": "débardeur sport",
+      "taille": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "couleur": [
+        "Noir",
+        "Gris",
+        "Blanc",
+        "Rouge",
+        "Bleu",
+        "Turquoise",
+        "Violet",
+        "Vert",
+        "Rose"
+      ],
+      "prix": 14.99,
+      "categorieId": 2,
+      "image": "/img/debardeur1.jpg"
+    },
+    {
+      "id": 8,
+      "libelle": "T-Shirt",
+      "description": "Un shirt en forme de T",
+      "taille": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "couleur": [
+        "Gris",
+        "Blanc",
+        "Turquoise",
+        "Vert",
+        "Rose"
+      ],
+      "prix": 7.99,
+      "categorieId": 2,
+      "image": "/img/tshirt4.png"
     }
   ],
   "commandes": [
@@ -149,19 +242,22 @@
           "produitId": 1,
           "quantite": 2,
           "taille": "XL",
-          "couleur": "Rouge"
+          "couleur": "Rouge",
+          "prix": 12.99
         },
         {
           "produitId": 1,
           "quantite": 1,
           "taille": "L",
-          "couleur": "Rouge"
+          "couleur": "Rouge",
+          "prix": 12.99
         },
         {
           "produitId": 1,
           "quantite": 1,
           "taille": "L",
-          "couleur": "Vert"
+          "couleur": "Vert",
+          "prix": 12.99
         }
       ]
     }

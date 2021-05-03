@@ -37,12 +37,9 @@ export default function Register(props) {
         }
     }
     const handleSubmit = (e) => {
-        console.log("HANDLE SUBMIT")
         e.preventDefault();
         const url = BASE_URL + "utilisateurs";
         const result = axios.post(url, identifiant);
-
-        console.log("identifiant")
 
         result.then(res => {
             localStorage.setItem("utilisateur", JSON.stringify(res.data));

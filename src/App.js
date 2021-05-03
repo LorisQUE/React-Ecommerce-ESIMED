@@ -13,6 +13,7 @@ import Profil from './pages/profil';
 import PrivateRoute from './route/privateRoute';
 import Register from './pages/register';
 import Products from './pages/products';
+import ProductDetail from './pages/productDetail';
 
 export const AuthContext = React.createContext({
   isConnected: false,
@@ -37,7 +38,9 @@ function App() {
             <Route path="/about" component={About}/>
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>
-            <Route path="/products" component={Products}/>
+            <Route path="/products/categorie/:type" component={Products}/>
+            <Route path="/products/recherche/:recherche" component={Products}/>
+            <Route path="/product/:id" component={ProductDetail}/>
             <Route path="/" component={Home}/>
           </Switch>
           <Footer/>

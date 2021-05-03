@@ -11,12 +11,12 @@ import CardProduct from "../components/store/cardProduct"
 export default function Home() {
     const [produits, setProduits] = useState([])
     useEffect(() => {
-        axios.get(BASE_URL + "produits?_limit=3")
+        //On get les trois derniers produits
+        axios.get(BASE_URL + "produits?_limit=3&_sort=id&_order=desc")
             .then(res => {
                 setProduits([...produits, ...res.data]);
             })
-            .then(()=>console.log("produits : ", produits))
-            .catch(console.log)
+            .catch(err => toast.error("Erreur lors de la récupèration des produits : " + err));
     }, [])
 
     return (
@@ -51,7 +51,7 @@ export default function Home() {
             <div className="container">
                 <section className="section-marg">
                     <h3>Nos produits phares</h3>
-                    <div className="card-container"> {produits.map((x) => <Link key={x.id} to={'/produits/' + x.id}><CardProduct produit={x}/></Link>)} </div>
+                    <div className="card-container"> {produits.map((x) => <Link key={x.id} to={'/product/' + x.id} className="card-link"><CardProduct produit={x}/></Link>)} </div>
                 </section>
 
                 <section className="section-marg">
