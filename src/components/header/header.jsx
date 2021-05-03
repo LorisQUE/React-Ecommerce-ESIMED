@@ -51,13 +51,9 @@ export default function Header() {
                 <ul className="navbar-nav mr-auto">
                     {menu.map((x,y) => <MenuLi key={y} lien={x.lien} nom={x.nom} />)}
                 </ul>
-                <div>
-                    <div className="btn">
-                        <Link to="/profil" className="fas fa-user" ></Link>
-                    </div>
-                    <div className="btn">
-                        <Link to="/" className="fas fa-shopping-basket"></Link>
-                    </div>
+                <div className="header-icon">
+                    <Link to="/profil"><i className="fas fa-user"/></Link>
+                    <Link to="/"><i className="fas fa-shopping-basket"/></Link>
                 </div>
                 <form onSubmit={handleSubmit} className="form-inline my-2 my-lg-0">
                     <InputLabel value={recherche} change={handleChange} name="recherche" type="text"/>

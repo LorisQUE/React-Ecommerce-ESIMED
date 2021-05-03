@@ -154,6 +154,7 @@ nav .fas:hover {
   border-color: black;
   transition: 0.3s;
 }
+
 .card-link:hover > .card {
   border-color: slategrey;
   transition: 0.3s;
@@ -161,4 +162,8 @@ nav .fas:hover {
 
 .card-link {
   margin-left: 1.25rem;
+}
+
+.header-icon a {
+  margin: 2em;
 }
