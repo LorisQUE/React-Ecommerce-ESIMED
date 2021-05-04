@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { AuthContext } from '../App';
 import InputLabel from '../components/form/inputLabel';
 import { BASE_URL } from '../services/data';
+import { setLocalUser } from '../services/userService';
 
 export default function Register(props) {
     const context = useContext(AuthContext);
@@ -43,7 +44,7 @@ export default function Register(props) {
         const result = axios.post(url, identifiant);
 
         result.then(res => {
-            localStorage.setItem("utilisateur", JSON.stringify(res.data));
+            setLocalUser(res.data[0])
             context.setConnected(true);
             props.history.push("/profil");
             toast.success("Votre compte a bien été créé ! Vous êtes désormais connecter en tant que " + res.data.nom + " " + res.data.prenom)

@@ -15,6 +15,7 @@ import Register from './pages/register';
 import Products from './pages/products';
 import ProductDetail from './pages/productDetail';
 import Cart from './pages/cart';
+import { isConnected } from './services/userService';
 
 export const AuthContext = React.createContext({
   isConnected: false,
@@ -22,7 +23,7 @@ export const AuthContext = React.createContext({
 })
 
 function App() {
-  const [auth, setauth] = useState(false)
+  const [auth, setauth] = useState(isConnected())
   const contextValue = {
     isConnected: auth,
     setConnected: setauth

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../App';
 import InputLabel from '../components/form/inputLabel';
 import { BASE_URL } from '../services/data';
+import { setLocalUser } from '../services/userService';
 
 export default function Login(props) {
     const [connexions, setConnexions] = useState({email: "", mdp: ""});
@@ -27,13 +28,14 @@ export default function Login(props) {
         });
 
         result.then(res => { 
+            console.log("la", res.data)
             if(!res.data[0]) {
                 setError(true);
                 localStorage.removeItem("utilisateur");
                 context.setConnected(false);
             } else {
                 setError(false);
-                localStorage.setItem("utilisateur", JSON.stringify(res.data));
+                setLocalUser(res.data[0]);
                 context.setConnected(true);
                 props.history.push("/");
             }
