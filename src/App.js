@@ -14,6 +14,7 @@ import PrivateRoute from './route/privateRoute';
 import Register from './pages/register';
 import Products from './pages/products';
 import ProductDetail from './pages/productDetail';
+import Cart from './pages/cart';
 
 export const AuthContext = React.createContext({
   isConnected: false,
@@ -41,6 +42,7 @@ function App() {
             <Route path="/products/categorie/:type" component={Products}/>
             <Route path="/products/recherche/:recherche" component={Products}/>
             <Route path="/product/:id" component={ProductDetail}/>
+            <Route path="/cart" component={Cart}/>
             <Route path="/" component={Home}/>
           </Switch>
           <Footer/>

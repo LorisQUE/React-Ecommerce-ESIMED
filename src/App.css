@@ -167,3 +167,12 @@ nav .fas:hover {
 .header-icon a {
   margin: 2em;
 }
+
+.flex-prix {
+  display: flex;
+  justify-content: space-between;
+}
+
+.remove {
+  cursor: pointer;
+}

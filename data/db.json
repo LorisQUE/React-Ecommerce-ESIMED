@@ -159,7 +159,7 @@
         "Gris",
         "Marron"
       ],
-      "prix": 35.00,
+      "prix": 35,
       "categorieId": 1,
       "image": "/img/pull2.jpg"
     },
@@ -278,6 +278,10 @@
     {
       "email": "test@gmail.com",
       "id": 4
+    },
+    {
+      "email": "z@z",
+      "id": 5
     }
   ],
   "contacts": [

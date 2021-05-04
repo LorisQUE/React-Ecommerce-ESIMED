@@ -53,7 +53,7 @@ export default function Header() {
                 </ul>
                 <div className="header-icon">
                     <Link to="/profil"><i className="fas fa-user"/></Link>
-                    <Link to="/"><i className="fas fa-shopping-basket"/></Link>
+                    <Link to="/cart"><i className="fas fa-shopping-basket"/></Link>
                 </div>
                 <form onSubmit={handleSubmit} className="form-inline my-2 my-lg-0">
                     <InputLabel value={recherche} change={handleChange} name="recherche" type="text"/>

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { toast } from "react-toastify";
 import InputLabel from "../components/form/inputLabel";
 import { BASE_URL } from "../services/data";
 import { checkLocalPanier, getLocalPanier, setLocalPanier } from "../services/storeService";
@@ -43,6 +44,7 @@ export default function ProductDetail(props) {
     article.produitId = produit.id;
     article.quantite = parseInt(article.quantite);
     checkLocalPanier(article);
+    toast.success(`L'article ${produit.libelle} a bien été ajouté au panier`)
   };
 
   return (

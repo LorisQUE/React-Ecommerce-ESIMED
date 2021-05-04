@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useState } from 'react'
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../App';
 import InputLabel from '../components/form/inputLabel';
@@ -76,6 +77,7 @@ export default function Register(props) {
                 <InputLabel required="required" value={identifiant.adresse.CP} change={handleChange} name="CP" label="Code Postal*" type="text" placeholder="Saisir le code postal de votre ville" />
                 <InputLabel required="required" value={identifiant.mdp} change={handleChange} name="mdp" label="Mot de Passe*" type="password" placeholder="Saisir votre mot de passe" />
                 <button type="submit" className="btn btn-primary">S'inscrire</button>
+                <Link to="/login" className="btn btn-secondary">Se connecter</Link>
             </form>
         </main>
     )
