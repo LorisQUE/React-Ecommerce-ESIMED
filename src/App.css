@@ -176,3 +176,26 @@ nav .fas:hover {
 .remove {
   cursor: pointer;
 }
+
+.price-cart{
+  width: 10em;
+}
+
+.payment form {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment .creditCardInput {
+  margin: 3em 0;
+}
+
+.badge-cart {
+  position: relative;
+  left: -1em;
+  background-color: red;
+  border-radius: 100%;
+  min-width: 1em;
+  color:white;
+  font-size: 1.1em;
+}

@@ -2,11 +2,16 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom';
 import { BASE_URL } from '../../services/data';
+import { getLocalPanier } from '../../services/storeService';
 import InputLabel from '../form/inputLabel';
 import MenuLi from './menuLi';
 
+
 export default function Header() {
     const history = useHistory();
+    const [nbArticle, setNbArticle] = useState(getLocalPanier().length);
+    window.setNbArt = setNbArticle;
+
     const [menu, setMenu] = useState([
         {
           nom: "Accueil",
@@ -53,7 +58,7 @@ export default function Header() {
                 </ul>
                 <div className="header-icon">
                     <Link to="/profil"><i className="fas fa-user"/></Link>
-                    <Link to="/cart"><i className="fas fa-shopping-basket"/></Link>
+                    <Link to="/cart"><i className="fas fa-shopping-basket"/>{nbArticle > 0 &&(<span className="badge badge-cart">{nbArticle}</span>)}</Link>
                 </div>
                 <form onSubmit={handleSubmit} className="form-inline my-2 my-lg-0">
                     <InputLabel value={recherche} change={handleChange} name="recherche" type="text"/>

@@ -1,17 +1,20 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import InputLabel from '../components/form/inputLabel';
 import { BASE_URL } from '../services/data';
-import { getLocalPanier, removeFromLocalPanier, setLocalPanier } from '../services/storeService'
+import { getLocalPanier, setLocalPanier } from '../services/storeService'
 
  export  default  function Cart() {
+    const history = useHistory();
     const [articles, setArticles] = useState(getLocalPanier());
     const [prixTotal, setPrixTotal] = useState(0);
     let newPrix = 0;
 
     useEffect(() => {
         getProducts().then(() => {
-            setArticles([...articles]);
+            setArticles(articles);
             setPrixTotal(Number(newPrix.toFixed(2)));
         });
     }, [])
@@ -30,7 +33,6 @@ import { getLocalPanier, removeFromLocalPanier, setLocalPanier } from '../servic
         }))
     }
 
-    
   const handleChange = (e) => {
     const value = e.currentTarget.value;
     const name = e.currentTarget.name;
@@ -44,21 +46,28 @@ import { getLocalPanier, removeFromLocalPanier, setLocalPanier } from '../servic
     setLocalPanier(articles);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   const handleRemove = (e) => {
-    const name = e.currentTarget.name;
     e.preventDefault();
-    console.log("handle Remove");
-    removeFromLocalPanier(articles, name);
+    const name = e.currentTarget.name;
+    const modif = articles[name];
+    const prix = modif.prix * modif.quantite;
+    setPrixTotal((oldPrixTotal) => Number((oldPrixTotal - prix).toFixed(2)));
+
+    articles.splice(name, 1);
+    setArticles([...articles]);
+    setLocalPanier(articles);
+    window.setNbArt(getLocalPanier().length);
+  }
+
+  const handleValidation = () => {
+      if(articles.length > 0) history.push("/address");
+      else toast.info("Vous devez avoir au moins un article");
   }
 
     return (
         <main className="container marg-hauteur">
             <h1>Mon panier</h1>
-            <table className="table table-hover">
+            <table id="table-cart" className="table table-hover">
 
                 <thead>
                     <tr>
@@ -66,7 +75,7 @@ import { getLocalPanier, removeFromLocalPanier, setLocalPanier } from '../servic
                         <th scope="col">Couleur</th>
                         <th scope="col">Taille</th>
                         <th scope="col">Quantité</th>
-                        <th scope="col">Prix</th>
+                        <th scope="col" className="price-cart">Prix</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -79,7 +88,7 @@ import { getLocalPanier, removeFromLocalPanier, setLocalPanier } from '../servic
                                 <td>{x.couleur}</td>
                                 <td>{x.taille}</td>
                                 <td>
-                                    <InputLabel change={handleChange} value={x.quantite} name={y} type="number" placeholder="Choisissez une quantité" min="1" />
+                                    <InputLabel  change={handleChange} value={x.quantite} name={y} type="number" placeholder="Choisissez une quantité" min="1" />
                                 </td>
                                 <td>{Number((x.prix * x.quantite).toFixed(2))}€</td>
                                 <td><a onClick={handleRemove} name={y} className="remove"><i className="far fa-trash-alt"></i></a></td>
@@ -90,7 +99,10 @@ import { getLocalPanier, removeFromLocalPanier, setLocalPanier } from '../servic
             </table>
             <div className="flex-prix">
                 <h6>Prix total : {prixTotal}€</h6>
-                <button className="btn btn-primary"> Acheter </button>
+                <div>
+                    <a className="btn btn-primary" onClick={handleValidation}> Valider le panier </a>
+                    <Link className="btn btn-secondary" to="/"> Continuer mes achats </Link>
+                </div>
             </div>
         </main>
     )

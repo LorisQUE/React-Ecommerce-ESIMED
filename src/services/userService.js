@@ -5,13 +5,14 @@ export const getLocalUser = () => {
 };
 
 export const setLocalUser = (user) => {
-    console.log(user);
-    console.log( JSON.stringify(user));
     localStorage.setItem(USER_KEY, JSON.stringify(user));
 };
 
 export const isConnected = () => {
     const user = getLocalUser();
-    console.log(user, !!user);
     return !!user;
+}
+
+export const removeLocalUser = () => {
+    localStorage.removeItem(USER_KEY);
 }

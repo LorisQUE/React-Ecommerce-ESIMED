@@ -16,6 +16,9 @@ import Products from './pages/products';
 import ProductDetail from './pages/productDetail';
 import Cart from './pages/cart';
 import { isConnected } from './services/userService';
+import Address from './pages/address';
+import Payment from './pages/payment';
+import Thanks from './pages/thanks';
 
 export const AuthContext = React.createContext({
   isConnected: false,
@@ -36,6 +39,10 @@ function App() {
         <Header/>
           <Switch>
             <PrivateRoute path="/profil"><Profil/></PrivateRoute>
+            <PrivateRoute path="/address"><Address/></PrivateRoute>
+            <PrivateRoute path="/payment"><Payment/></PrivateRoute>
+            <PrivateRoute path="/thanks/:id"><Thanks/></PrivateRoute>
+            <PrivateRoute path="/thanks"><Thanks/></PrivateRoute>
             <Route path="/contact" component={Contact}/>
             <Route path="/about" component={About}/>
             <Route path="/login" component={Login}/>

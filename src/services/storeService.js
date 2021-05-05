@@ -24,11 +24,6 @@ export const checkLocalPanier = (article) => {
     }
 };
 
-export const removeFromLocalPanier = (panier, index) => {
-    //Check id, check taille et couleur
-    //Ou uniquement index du produit ?
-    console.log(panier, index);
-    panier.slice(index, 1);
-    delete panier[index];
-    console.log(panier, index);
+export const clearLocalPanier = () => {
+    localStorage.removeItem(KEY_PANIER);
 };
