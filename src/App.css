@@ -186,7 +186,7 @@ nav .fas:hover {
   flex-direction: column;
 }
 
-.payment .creditCardInput {
+.payment .creditCardInput, .div-commande {
   margin: 3em 0;
 }
 
