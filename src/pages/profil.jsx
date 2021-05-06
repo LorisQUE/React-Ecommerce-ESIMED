@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 import { AuthContext } from '../App';
 import TableCart from '../components/store/tableCart';
 import { BASE_URL } from '../services/data';
+import { PRIX_COLISSIMO } from '../services/storeService';
 import { removeLocalUser } from '../services/userService';
 
 export default function Profil() {
@@ -14,10 +15,8 @@ export default function Profil() {
     
     useEffect(() => {
         const url = BASE_URL + "commandes";
-        console.log("UTILISATEUR : ", utilisateur);
-        axios.get(url, { params: { userId: utilisateur.id}})
+        axios.get(url, { params: { userId: utilisateur.id, _sort: "id", _order: "desc"}})
         .then(res => {
-            console.log("data", res.data);
             setCommandes(res.data)
         });
     }, []);
@@ -32,12 +31,15 @@ export default function Profil() {
         <main className="container marg-hauteur">
             <h1>Bonjour {utilisateur.prenom + " " + utilisateur.nom} - Mes commandes</h1>
 
-            {commandes.map(x => {
-                {console.log("x", x)}
+            {commandes.map((x,y) => {
                 return(
-                    <div className="div-commande">
+                    <div key={y} className="div-commande">
                         <h3>Commande du {new Date(x.date).toLocaleString()}</h3>
-                        <label>Livrée à : {x.adresse.nom} {x.adresse.prenom} à l'adresse : {x.adresse.voie}, {x.adresse.ville}, {x.adresse.CP}</label>
+                        <label>
+                            Livraison {x.isColissimo ? "par colissimo (+" + PRIX_COLISSIMO + "€)"  : "en point relais"}
+                            <br/>{x.adresse.nom} {x.adresse.prenom}
+                            <br/>{x.adresse.voie}, {x.adresse.ville}, {x.adresse.CP}
+                        </label>
                         <TableCart articles={x.produits}/>
                     </div>
                 )

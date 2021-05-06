@@ -11,8 +11,15 @@ export default function Products(props) {
     const url = BASE_URL + "produits";
     const [produits, setProduits] = useState([])
     useEffect(() => {
-        const paramGet = (params.type) ? { categorieId: params.type } : { libelle_like: params.recherche };
+        let paramGet;
 
+        if(params.recherche)
+            paramGet = { libelle_like: params.recherche }
+        else if(params.categorie && !params.type)
+            paramGet = { categorieId: params.categorie }
+        else if(params.categorie && params.type)
+            paramGet = { categorieId: params.categorie, typeId: params.type  }
+            
         axios.get(url, { params: paramGet })
         .then(res => setProduits([...res.data]))
         .catch(err => toast.error("Erreur lors de la récupération des produits : " + err));

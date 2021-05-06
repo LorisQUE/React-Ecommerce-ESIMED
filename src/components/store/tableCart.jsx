@@ -17,7 +17,6 @@ export default function TableCart({articles}) {
     }, [articles])
 
     const calculePrix = async () => {
-        console.log("articles", articles)
         return Promise.all(
             articles.map( (x, y) => {
                 return newPrix += x.prix * x.quantite;
@@ -54,7 +53,7 @@ export default function TableCart({articles}) {
                         }))}
                     </tbody>
                 </table>
-                <label>Prix total : {prixTotal}€</label>
+                <label>Prix total : {Number((prixTotal).toFixed(2))}€</label>
             </>
     )
 }

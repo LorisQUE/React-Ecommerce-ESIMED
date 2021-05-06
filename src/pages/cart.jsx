@@ -14,12 +14,10 @@ import { getLocalPanier, setLocalPanier } from '../services/storeService'
 
     useEffect(() => {
         getProducts().then(() => {
-            console.log(articles);
             setArticles(articles);
             setLocalPanier(articles);
             setPrixTotal(Number(newPrix.toFixed(2)));
         });
-        console.log(articles);
     }, [])
 
     const getProducts = async () => {
@@ -87,7 +85,6 @@ import { getLocalPanier, setLocalPanier } from '../services/storeService'
 
                 <tbody>
                     {articles.map((x, y) =>{
-                            {console.log("ARTICLES MAPPED", articles)}
                         return (
                             <tr key={y}>
                                 <td><img src={x.image} className="img-commande" /></td>

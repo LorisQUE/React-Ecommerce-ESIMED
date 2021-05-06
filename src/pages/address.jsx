@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import InputLabel from '../components/form/inputLabel'
-import {  getLocalPanier, PRIX_COLISSIMO } from '../services/storeService'
+import { getLocalPanier, PRIX_COLISSIMO } from '../services/storeService'
 import { getLocalUser } from '../services/userService'
 
 export default function Address() {
@@ -19,22 +19,20 @@ export default function Address() {
             setPrixTotal(Number(newPrix.toFixed(2)));
         });
         setAdresse({...user.adresse, nom: user.nom, prenom: user.prenom});
-        console.log(adresse);
     }, [])
 
     const handleChange = (e) => {
         const value = e.currentTarget.value;
         const name = e.currentTarget.name;
-
         if(name == "livraison"){
-            setLivraison(value == "true")
+            const isColissimo = (value == "true");
+            setLivraison(isColissimo)
             calculePrix()
             .then(() => {
-                if(value) newPrix += PRIX_COLISSIMO;
+                if(isColissimo) newPrix += PRIX_COLISSIMO;
                 setPrixTotal(Number(newPrix.toFixed(2)));
             });
         } else {
-            console.log("adresse", adresse, "name & value", name, value);
             setAdresse({...adresse, [name]: value});
         }
     }
@@ -42,7 +40,7 @@ export default function Address() {
     const calculePrix = async () => {
         newPrix = 0;
         return Promise.all(
-            getLocalPanier().map( (x, y) => {
+            getLocalPanier().map((x) => {
                 newPrix += x.prix * x.quantite;
                 return newPrix;
             })

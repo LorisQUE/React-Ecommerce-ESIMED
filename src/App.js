@@ -47,7 +47,8 @@ function App() {
             <Route path="/about" component={About}/>
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>
-            <Route path="/products/categorie/:type" component={Products}/>
+            <Route path="/products/categorie/:categorie/:type" component={Products}/>
+            <Route path="/products/categorie/:categorie" component={Products}/>
             <Route path="/products/recherche/:recherche" component={Products}/>
             <Route path="/product/:id" component={ProductDetail}/>
             <Route path="/cart" component={Cart}/>

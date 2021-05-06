@@ -28,7 +28,6 @@ export default function Login(props) {
         });
 
         result.then(res => { 
-            console.log("la", res.data)
             if(!res.data[0]) {
                 setError(true);
                 localStorage.removeItem("utilisateur");

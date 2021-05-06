@@ -71,11 +71,33 @@
       "libelle": "Enfant"
     }
   ],
+  "types": [
+    {
+      "id": 1,
+      "libelle": "T-Shirt"
+    },
+    {
+      "id": 2,
+      "libelle": "Pull"
+    },
+    {
+      "id": 3,
+      "libelle": "Sweat-Shirt"
+    },
+    {
+      "id": 4,
+      "libelle": "Débardeur"
+    },
+    {
+      "id": 5,
+      "libelle": "Polo"
+    }
+  ],
   "produits": [
     {
       "id": 1,
-      "libelle": "Produit1",
-      "description": "Description du produit numéro un",
+      "libelle": "T-Shirt Simple",
+      "description": "T-Shirt simple, couleur uni, deux manches pour les bras, et un trou pour la tête",
       "taille": [
         "S",
         "M",
@@ -89,12 +111,13 @@
       ],
       "prix": 12.99,
       "categorieId": 1,
+      "typeId": 1,
       "image": "/img/tshirt1.jpg"
     },
     {
       "id": 2,
-      "libelle": "T-Shirt bleu",
-      "description": "T-shirt avec deux manches, et de couleur bleu uniquement",
+      "libelle": "T-Shirt rayé",
+      "description": "T-shirt rayé, disponible en noir et en bleu",
       "taille": [
         "S",
         "M",
@@ -102,10 +125,12 @@
         "XL"
       ],
       "couleur": [
-        "Bleu"
+        "Bleu",
+        "Noir"
       ],
       "prix": 9.99,
       "categorieId": 1,
+      "typeId": 1,
       "image": "/img/tshirt2.png"
     },
     {
@@ -123,6 +148,7 @@
       ],
       "prix": 9.99,
       "categorieId": 1,
+      "typeId": 3,
       "image": "/img/sweet1.jpg"
     },
     {
@@ -140,12 +166,13 @@
       ],
       "prix": 9.99,
       "categorieId": 1,
+      "typeId": 1,
       "image": "/img/tshirt3.jpg"
     },
     {
       "id": 5,
       "libelle": "Pull Nike de très bonne facture (non)",
-      "description": "Un pull Nike réalisé a partir de vibre complétement végétale et écologique. (Assemblé par des enfants esclaves au Cambodge)",
+      "description": "Un pull Nike réalisé a partir de fibre complétement végétale et écologique. (Assemblé par des enfants esclaves au Cambodge)",
       "taille": [
         "XS",
         "S",
@@ -161,6 +188,7 @@
       ],
       "prix": 35,
       "categorieId": 1,
+      "typeId": 2,
       "image": "/img/pull2.jpg"
     },
     {
@@ -183,6 +211,7 @@
       ],
       "prix": 14.99,
       "categorieId": 1,
+      "typeId": 2,
       "image": "/img/pull1.jpg"
     },
     {
@@ -208,12 +237,13 @@
       ],
       "prix": 14.99,
       "categorieId": 2,
+      "typeId": 4,
       "image": "/img/debardeur1.jpg"
     },
     {
       "id": 8,
-      "libelle": "T-Shirt",
-      "description": "Un shirt en forme de T",
+      "libelle": "Shirt en T",
+      "description": "Un shirt en forme de T, un T-Shirt hihi ^^",
       "taille": [
         "XS",
         "S",
@@ -229,7 +259,29 @@
       ],
       "prix": 7.99,
       "categorieId": 2,
+      "typeId": 1,
       "image": "/img/tshirt4.png"
+    },
+    {
+      "id": 9,
+      "libelle": "Polo en cuir de rat",
+      "description": "c 1 polo ké en kuir de rat dégou !! béé !!! ^^",
+      "taille": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "couleur": [
+        "Moutarde",
+        "Huile de tourne sol",
+        "Beurre",
+        "Comment ça c'est pas une liste de course ? "
+      ],
+      "prix": 7.99,
+      "categorieId": 1,
+      "typeId": 5,
+      "image": "/img/polo1.jpg"
     }
   ],
   "commandes": [
@@ -280,6 +332,57 @@
       ],
       "isColissimo": false,
       "id": 14
+    },
+    {
+      "userId": 1,
+      "date": 1620301588174,
+      "adresse": {
+        "voie": "22 Avenue de la Brindille",
+        "ville": "Brindillon",
+        "CP": "12500",
+        "nom": "Cuslotre",
+        "prenom": "Jacques"
+      },
+      "produits": [
+        {
+          "couleur": "Blanc",
+          "taille": "XS",
+          "quantite": 1,
+          "produitId": 8,
+          "libelle": "T-Shirt",
+          "prix": 7.99,
+          "image": "/img/tshirt4.png"
+        },
+        {
+          "couleur": "Bleu",
+          "taille": "M",
+          "quantite": 2,
+          "produitId": 2,
+          "libelle": "T-Shirt bleu",
+          "prix": 9.99,
+          "image": "/img/tshirt2.png"
+        },
+        {
+          "couleur": "Noir",
+          "taille": "S",
+          "quantite": 1,
+          "produitId": 7,
+          "libelle": "Débardeur sport",
+          "prix": 14.99,
+          "image": "/img/debardeur1.jpg"
+        },
+        {
+          "couleur": "Gris",
+          "taille": "S",
+          "quantite": 2,
+          "produitId": 5,
+          "libelle": "Pull Nike de très bonne facture (non)",
+          "prix": 35,
+          "image": "/img/pull2.jpg"
+        }
+      ],
+      "isColissimo": false,
+      "id": 15
     }
   ],
   "newsletters": [
