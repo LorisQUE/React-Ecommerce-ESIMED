@@ -20,7 +20,7 @@ export default function Profil() {
             console.log("data", res.data);
             setCommandes(res.data)
         });
-    }, [])
+    }, []);
 
     const handleDeconnexion = () => {
         removeLocalUser();
@@ -33,10 +33,11 @@ export default function Profil() {
             <h1>Bonjour {utilisateur.prenom + " " + utilisateur.nom} - Mes commandes</h1>
 
             {commandes.map(x => {
+                {console.log("x", x)}
                 return(
                     <div className="div-commande">
-                        {console.log("x", x)}
                         <h3>Commande du {new Date(x.date).toLocaleString()}</h3>
+                        <label>Livrée à : {x.adresse.nom} {x.adresse.prenom} à l'adresse : {x.adresse.voie}, {x.adresse.ville}, {x.adresse.CP}</label>
                         <TableCart articles={x.produits}/>
                     </div>
                 )

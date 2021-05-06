@@ -234,185 +234,52 @@
   ],
   "commandes": [
     {
-      "id": 1,
       "userId": 1,
-      "date": 1620200000000,
+      "date": 1620296129188,
       "adresse": {
         "voie": "25 Rue de Figueras",
         "ville": "Marignane",
-        "CP": "13700"
+        "CP": "13700",
+        "nom": "Quiroule",
+        "prenom": "Pierredd"
       },
       "produits": [
         {
-          "produitId": 1,
-          "quantite": 2,
-          "taille": "XL",
           "couleur": "Rouge",
-          "prix": 12.99
-        },
-        {
-          "produitId": 1,
-          "quantite": 1,
-          "taille": "L",
-          "couleur": "Rouge",
-          "prix": 12.99
-        },
-        {
-          "produitId": 1,
-          "quantite": 1,
-          "taille": "L",
-          "couleur": "Vert",
-          "prix": 12.99
-        }
-      ]
-    },
-    {
-      "userId": 1,
-      "date": 1620201857547,
-      "adresse": {
-        "voie": "25 Rue de Figueras",
-        "ville": "Marignane",
-        "CP": "13700"
-      },
-      "produits": [
-        {
-          "couleur": "Bleu",
           "taille": "S",
-          "quantite": 3,
+          "quantite": 1,
           "produitId": 1,
           "libelle": "Produit1",
-          "prix": 12.99
-        },
-        {
-          "couleur": "Gris",
-          "taille": "XS",
-          "quantite": 1,
-          "produitId": 8,
-          "libelle": "T-Shirt",
-          "prix": 7.99
+          "prix": 12.99,
+          "image": "/img/tshirt1.jpg"
         }
       ],
-      "id": 2
+      "isColissimo": true,
+      "id": 13
     },
     {
       "userId": 1,
-      "date": 1620202278161,
+      "date": 1620296447334,
       "adresse": {
-        "voie": "25 Rue de Figueras",
-        "ville": "Marignane",
-        "CP": "13700"
+        "voie": "20 Rue de la Truite en argent",
+        "ville": "England is my city",
+        "CP": "14213",
+        "nom": "Quiroule",
+        "prenom": "Pierre"
       },
       "produits": [
-        {
-          "couleur": "Noir",
-          "taille": "XS",
-          "quantite": 2,
-          "produitId": 7,
-          "libelle": "Débardeur sport",
-          "prix": 14.99
-        }
-      ],
-      "id": 3
-    },
-    {
-      "userId": 1,
-      "date": 1620214065666,
-      "adresse": {
-        "voie": "25 Rue de Figueras",
-        "ville": "Marignane",
-        "CP": "13700"
-      },
-      "produits": [
-        {
-          "couleur": "Gris",
-          "taille": "S",
-          "quantite": 1,
-          "produitId": 7,
-          "libelle": "Débardeur sport",
-          "prix": 14.99
-        },
-        {
-          "couleur": "Rouge",
-          "taille": "S",
-          "quantite": 2,
-          "produitId": 7,
-          "libelle": "Débardeur sport",
-          "prix": 14.99
-        },
         {
           "couleur": "Noir",
           "taille": "XS",
           "quantite": 1,
           "produitId": 6,
           "libelle": "Pull",
-          "prix": 14.99
+          "prix": 14.99,
+          "image": "/img/pull1.jpg"
         }
       ],
-      "id": 4
-    },
-    {
-      "userId": 2,
-      "date": 1620219050431,
-      "adresse": {
-        "voie": "20 Rue des champs Catalauniques",
-        "ville": "Châlons-en-Champagne",
-        "CP": "51000"
-      },
-      "produits": [
-        {
-          "couleur": "Rouge",
-          "taille": "M",
-          "quantite": 1,
-          "produitId": 1,
-          "libelle": "Produit1",
-          "prix": 12.99
-        },
-        {
-          "couleur": "Bleu",
-          "taille": "M",
-          "quantite": 2,
-          "produitId": 3,
-          "libelle": "Sweat à capuche",
-          "prix": 9.99
-        },
-        {
-          "couleur": "Noir",
-          "taille": "XS",
-          "quantite": 1,
-          "produitId": 6,
-          "libelle": "Pull",
-          "prix": 14.99
-        },
-        {
-          "couleur": "Bleu",
-          "taille": "L",
-          "quantite": 2,
-          "produitId": 1,
-          "libelle": "Produit1",
-          "prix": 12.99
-        }
-      ],
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "date": 1620222625492,
-      "adresse": {
-        "voie": "25 Rue de Figueras",
-        "ville": "Marignane",
-        "CP": "13700"
-      },
-      "produits": [
-        {
-          "couleur": "Bleu",
-          "taille": "S",
-          "quantite": 1,
-          "produitId": 2,
-          "libelle": "T-Shirt bleu",
-          "prix": 9.99
-        }
-      ],
-      "id": 8
+      "isColissimo": false,
+      "id": 14
     }
   ],
   "newsletters": [

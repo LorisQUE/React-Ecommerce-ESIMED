@@ -1,4 +1,5 @@
 const KEY_PANIER = "panier";
+export const PRIX_COLISSIMO = 5.90;
 
 export const getLocalPanier = () => {
     const panier = JSON.parse(localStorage.getItem(KEY_PANIER));

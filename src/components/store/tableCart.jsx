@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
+import { PRIX_COLISSIMO } from '../../services/storeService';
 
 export default function TableCart({articles}) {
-    console.log("articles in cart", articles)
     const [prixTotal, setPrixTotal] = useState(0);
+    const livraison = JSON.parse(localStorage.getItem("commande"));
     let newPrix = 0;
 
     useEffect(() => {
         if(!!articles){
             calculePrix()
-            .then(setPrixTotal(newPrix));
-    }
+            .then(() => {
+                if(livraison) newPrix += PRIX_COLISSIMO;
+                setPrixTotal(newPrix)
+            });
+        }
     }, [articles])
 
     const calculePrix = async () => {
@@ -26,6 +30,7 @@ export default function TableCart({articles}) {
             <table id="table-cart" className="table table-hover">
                     <thead>
                         <tr>
+                            <th scope="col">Image</th>
                             <th scope="col">Libelle</th>
                             <th scope="col">Couleur</th>
                             <th scope="col">Taille</th>
@@ -38,6 +43,7 @@ export default function TableCart({articles}) {
                         {articles &&(articles.map((x, y) =>{
                             return (
                                 <tr key={y}>
+                                    <td><img src={x.image} className="img-commande" /></td>
                                     <th>{x.libelle}</th>
                                     <td>{x.couleur}</td>
                                     <td>{x.taille}</td>

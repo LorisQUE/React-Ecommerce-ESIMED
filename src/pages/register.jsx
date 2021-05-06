@@ -58,15 +58,15 @@ export default function Register(props) {
                 <InputLabel required="required" value={identifiant.nom} change={handleChange} name="nom" label="Nom*" type="text" placeholder="Saisir votre nom" />
                 <InputLabel required="required" value={identifiant.prenom} change={handleChange} name="prenom" label="Prenom*" type="text" placeholder="Saisir votre prenom" />
                 <label>Civilité*</label>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="radio" onChange={handleChange} class="form-check-input" name="civilite" value="M" required />
+                <div className="form-check">
+                    <label className="form-check-label">
+                        <input type="radio" onChange={handleChange} className="form-check-input" name="civilite" value="M" required />
                         Homme
                     </label>
                 </div>
-                <div class="form-check disabled">
-                    <label class="form-check-label">
-                        <input type="radio" onChange={handleChange} class="form-check-input" name="civilite" value="Mme" required />
+                <div className="form-check disabled">
+                    <label className="form-check-label">
+                        <input type="radio" onChange={handleChange} className="form-check-input" name="civilite" value="Mme" required />
                         Femme
                     </label>
                 </div>

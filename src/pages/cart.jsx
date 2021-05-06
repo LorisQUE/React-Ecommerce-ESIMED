@@ -14,19 +14,23 @@ import { getLocalPanier, setLocalPanier } from '../services/storeService'
 
     useEffect(() => {
         getProducts().then(() => {
+            console.log(articles);
             setArticles(articles);
+            setLocalPanier(articles);
             setPrixTotal(Number(newPrix.toFixed(2)));
         });
+        console.log(articles);
     }, [])
 
     const getProducts = async () => {
         const url = BASE_URL + "produits/";
         return Promise.all(
-            articles.map( (x, y) => {
+            articles.map((x, y) => {
                 return axios.get(url + x.produitId)
                 .then(res => {
                     articles[y].libelle = res.data.libelle;
                     articles[y].prix = res.data.prix;
+                    articles[y].image = res.data.image;
                     newPrix += res.data.prix * articles[y].quantite;
                     return articles[y];
                 });
@@ -71,6 +75,7 @@ import { getLocalPanier, setLocalPanier } from '../services/storeService'
 
                 <thead>
                     <tr>
+                        <th scope="col">Image</th>
                         <th scope="col">Libelle</th>
                         <th scope="col">Couleur</th>
                         <th scope="col">Taille</th>
@@ -82,8 +87,10 @@ import { getLocalPanier, setLocalPanier } from '../services/storeService'
 
                 <tbody>
                     {articles.map((x, y) =>{
+                            {console.log("ARTICLES MAPPED", articles)}
                         return (
                             <tr key={y}>
+                                <td><img src={x.image} className="img-commande" /></td>
                                 <th>{x.libelle}</th>
                                 <td>{x.couleur}</td>
                                 <td>{x.taille}</td>

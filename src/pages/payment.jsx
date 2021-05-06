@@ -31,6 +31,7 @@ export default function Payment() {
         axios.post(url, commande)
         .then((res) => {
                 clearLocalPanier();
+                window.setNbArt(0);
                 toast.success("Votre commande viens d'être envoyée !")
                 history.push("/thanks");
             }
@@ -38,7 +39,7 @@ export default function Payment() {
     }
 
     const handleAnnuler = () => {
-
+        history.push("/");
     }
 
     return (
