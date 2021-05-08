@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
+import Pagination from 'react-js-pagination';
 import { useHistory } from 'react-router';
 import { AuthContext } from '../App';
 import TableCart from '../components/store/tableCart';
@@ -12,14 +13,28 @@ export default function Profil() {
     const context = useContext(AuthContext);
     const [commandes, setCommandes] = useState([]);
     const utilisateur = JSON.parse(localStorage.getItem("utilisateur"));
+
+    const [activePage, setActivePage] = useState(1);
+    const [nbCommand, setNbCommand] = useState(0)
+    const [limit, setLimit] = useState(5)
     
     useEffect(() => {
         const url = BASE_URL + "commandes";
         axios.get(url, { params: { userId: utilisateur.id, _sort: "id", _order: "desc"}})
         .then(res => {
+            setNbCommand(res.data.length);
+            //setCommandes(res.data)
+        });
+
+        axios.get(url, { params: { userId: utilisateur.id, _page: activePage, _limit: limit, _sort: "id", _order: "desc"}})
+        .then(res => {
             setCommandes(res.data)
         });
-    }, []);
+    }, [activePage]);
+
+    const handlePageChange = (pageNumber) => {
+        setActivePage(pageNumber);
+      };
 
     const handleDeconnexion = () => {
         removeLocalUser();
@@ -45,6 +60,16 @@ export default function Profil() {
                 )
             })}
 
+            <Pagination
+                    itemClass="page-item"
+                    linkClass="page-link"
+                    activePage={activePage}
+                    itemsCountPerPage={limit}
+                    totalItemsCount={nbCommand}
+                    pageRangeDisplayed={5}
+                    onChange={handlePageChange}
+                    />
+            <br/>
             <button onClick={handleDeconnexion} className="btn btn-secondary">Déconnexion</button>
         </main>
     )
